@@ -1,0 +1,52 @@
+name: refresh stats
+
+on:
+  schedule:
+    # Runs every night at 05:17 UTC (pick any off-peak minute to avoid GitHub runner delays)
+    - cron: "17 5 * * *"
+  # Allows you to click "Run workflow" manually in the GitHub Actions tab anytime
+  workflow_dispatch:
+
+# Grant write permissions so the bot can commit updated SVGs back to your repo
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate Dynamic SVGs
+        env:
+          # Automatically provided by GitHub Actions — no setup or secrets needed
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+        run: |
+          python3 scripts/generate_stats.py
+
+      - name: Commit If Changed
+        run: |
+          # 1. Define files to watch for changes
+          FILES="stats.svg streak.svg langs.svg year.svg"
+          
+          # 2. Check if git status is empty. If no changes, exit quietly without committing
+          if [ -z "$(git status --porcelain -- $FILES)" ]; then
+            echo "No stats changed today. Skipping commit."
+            exit 0
+          fi
+          
+          # 3. Configure the official GitHub Actions bot identity
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # 4. Commit and push the updated graphics back to main
+          git add -- $FILES
+          git commit -m "stats: daily refresh"
+          git push
