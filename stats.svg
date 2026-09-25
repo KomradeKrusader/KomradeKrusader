@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="70" viewBox="0 0 340 70">
+  <style>
+    .label { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 11px; fill: #8b949e; letter-spacing: 0.05em; }
+    .num { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 24px; font-weight: bold; fill: #58a6ff; }
+  </style>
+  <text x="10" y="24" class="label">CONTRIBUTIONS (PAST YEAR)</text>
+  <text x="10" y="56" class="num">10</text>
+</svg>
