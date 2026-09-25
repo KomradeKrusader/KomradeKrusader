@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="180" viewBox="0 0 600 180">
+  <style>
+    .hdr { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 10px; fill: #8b949e; letter-spacing: 0.08em; }
+    .name { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; fill: #c9d1d9; }
+    .bar { fill: #30363d; }
+    .val { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 11px; fill: #8b949e; }
+  </style>
+  <text x="0" y="15" class="hdr">BY BYTES</text>
+  
+        <text x="0" y="48" class="name">javascript</text>
+        <rect x="95" y="38" width="91" height="8" rx="4" class="bar" />
+        <text x="245" y="48" class="val">65%</text>
+      
+        <text x="0" y="74" class="name">python</text>
+        <rect x="95" y="64" width="35" height="8" rx="4" class="bar" />
+        <text x="245" y="74" class="val">25%</text>
+      
+        <text x="0" y="100" class="name">c++</text>
+        <rect x="95" y="90" width="14" height="8" rx="4" class="bar" />
+        <text x="245" y="100" class="val">10%</text>
+      
+  <g transform="translate(300, 0)">
+    <text x="0" y="15" class="hdr">BY REPOS</text>
+    
+        <text x="0" y="48" class="name">javascript</text>
+        <rect x="95" y="38" width="140" height="8" rx="4" class="bar" />
+        <text x="245" y="48" class="val">1</text>
+      
+        <text x="0" y="74" class="name">python</text>
+        <rect x="95" y="64" width="140" height="8" rx="4" class="bar" />
+        <text x="245" y="74" class="val">1</text>
+      
+        <text x="0" y="100" class="name">c++</text>
+        <rect x="95" y="90" width="140" height="8" rx="4" class="bar" />
+        <text x="245" y="100" class="val">1</text>
+      
+  </g>
+</svg>

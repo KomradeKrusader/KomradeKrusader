@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="24" viewBox="0 0 800 24">
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; fill: #f0f6fc; }
+    line { stroke: #21262d; stroke-width: 1; }
+  </style>
+  <text x="0" y="16">about this page</text>
+  <line x1="134.0" y1="12" x2="800" y2="12" />
+</svg>
