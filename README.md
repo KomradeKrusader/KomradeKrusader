@@ -6,6 +6,14 @@
 
 <br/>
 
+<div align="center">
+  <picture>
+    <img src="./stats.svg" width="700" alt="Activity Sparkline" />
+  </picture>
+</div>
+
+<br/>
+
 <picture>
   <img src="./assets/hd-about.svg" width="800" alt="about" />
 </picture>
@@ -42,11 +50,5 @@ Self-generating GitHub profile powered by local ONNX background segmentation, SM
 </picture>
 
 <picture>
-  <img src="./stats.svg" alt="stats overview" />
-</picture>
-
-<br/>
-
-<picture>
-  <img src="./langs.svg" alt="languages" />
+  <img src="./langs.svg" width="600" alt="languages" />
 </picture>
