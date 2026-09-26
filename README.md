@@ -10,6 +10,11 @@
   <picture>
     <img src="./stats.svg" width="700" alt="Activity Sparkline" />
   </picture>
+
+  [Instagram](https://www.instagram.com/kommiekrusader/) &nbsp;·&nbsp;
+  [LinkedIn](https://www.linkedin.com/in/abhinav_prakash_singh) &nbsp;·&nbsp;
+  [Email](singhabhinavprakash5@gmail.com) &nbsp;·&nbsp;
+
 </div>
 
 <br/>
@@ -18,10 +23,11 @@
   <img src="./assets/hd-about.svg" width="800" alt="about" />
 </picture>
 
-> Undergraduate engineering student building lightweight tooling, graphics routines, and interactive software.
+> Undergraduate Computer Engineering Student at CMR University Bangalore. <br> 
+> Building lightweight tooling, graphics routines, and interactive software.
 
-Exploring low-level systems, computer vision interactions, and terminal automation.<br/>
-Focused on tools that feel instant and run with zero external bloat.
+Exploring low-level systems, computer vision interactions, and terminal automation. Currently working on:<br/>
+[PuzzleBooth](https://github.com/KomradeKrusader/PuzzleBooth) - Interactive camera application that captures real-time video feeds and slices them into interactive tile puzzles.
 
 <br/>
 
@@ -29,7 +35,7 @@ Focused on tools that feel instant and run with zero external bloat.
   <img src="./assets/hd-stack.svg" width="800" alt="stack" />
 </picture>
 
-<samp>python</samp> &nbsp; <samp>c++</samp> &nbsp; <samp>javascript</samp> &nbsp; <samp>react</samp> &nbsp; <samp>linux</samp> &nbsp; <samp>git</samp> &nbsp; <samp>automation</samp>
+<samp>Python</samp> &nbsp; <samp>Java</samp> &nbsp; <samp>JavaScript</samp> &nbsp; <samp>React</samp> &nbsp; <samp>Linux</samp> &nbsp; <samp>Git</samp> &nbsp; <samp>Automation</samp>
 
 <br/><br/>
 
@@ -39,9 +45,6 @@ Focused on tools that feel instant and run with zero external bloat.
 
 **[PuzzleBooth](https://github.com/KomradeKrusader/PuzzleBooth)** · <samp>javascript</samp>, <samp>computer-vision</samp>  
 Interactive camera application that captures real-time video feeds and slices them into interactive tile puzzles.
-
-**[KomradeKrusader](https://github.com/KomradeKrusader/KomradeKrusader)** · <samp>python</samp>, <samp>svg</samp>, <samp>actions</samp>  
-Self-generating GitHub profile powered by local ONNX background segmentation, SMIL vector typing, and automated nightly refreshes.
 
 <br/>
 
