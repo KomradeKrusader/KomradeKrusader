@@ -14,31 +14,31 @@ LINE_H = 15.0
 
 
 def process_image(img_path):
-  # 1. Background removal
+  # remove the background
   with open(img_path, "rb") as f:
     nobg = Image.open(io.BytesIO(remove(f.read()))).convert("RGBA")
 
-  # Fill transparent areas with pure white
+  # fill transparent areas with pure white
   canvas = Image.new("RGBA", nobg.size, (255, 255, 255, 255))
   canvas.paste(nobg, mask=nobg.split()[3])
   rgb = np.array(canvas.convert("RGB"))
 
-  # 2. Resize to grid
+  # resize to grid
   h, w, _ = rgb.shape
   rows = int(COLS * (h / w) * ROW_ASPECT)
   resized = cv2.resize(rgb, (COLS, rows), interpolation=cv2.INTER_AREA)
 
-  # 3. Bilateral filter & CLAHE
+  # bilateral filter & CLAHE
   gray = cv2.cvtColor(resized, cv2.COLOR_RGB2GRAY)
   smooth = cv2.bilateralFilter(gray, d=5, sigmaColor=50, sigmaSpace=50)
   clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
   enhanced = clahe.apply(smooth)
 
-  # 4. Gamma darkening curve: (v/255)^1.7
+  # gamma darkening curve (v/255)^1.7
   darkened = np.power(enhanced / 255.0, 1.7) * 255.0
   darkened = np.clip(darkened, 0, 255).astype(np.uint8)
 
-  # 5. Map to ramp
+  # map to ramp
   ascii_lines = []
   ramp_len = len(RAMP)
   for row in darkened:
@@ -55,7 +55,7 @@ def generate_svg(ascii_lines, rows, woff2_path, out_svg):
   svg_w = int(COLS * CHAR_W)
   svg_h = int(rows * LINE_H)
 
-  # Generate SMIL animated wipe per row
+  # generate SMIL animated wipe per row
   defs_clips = []
   text_elements = []
 
@@ -103,21 +103,23 @@ def generate_svg(ascii_lines, rows, woff2_path, out_svg):
 from pathlib import Path
 
 if __name__ == "__main__":
-  # Resolve paths relative to the repository root, regardless of where the command is run
+  # resolve paths relative to the repository root, doesn't matter where it's run from
   repo_root = Path(__file__).resolve().parent.parent
 
-  # Checks for either input.jpg or input.jpeg
+  # checks for either input.jpg or input.jpeg
   input_path = repo_root / "assets" / "input.jpeg"
   if not input_path.exists():
     input_path = repo_root / "assets" / "input.jpg"
+  if not input_path.exists():
+      input_path = repo_root / "assets" / "input.png"
 
   font_path = repo_root / "fonts" / "ramp.woff2"
   output_svg = repo_root / "portrait.svg"
 
   print(f"[1/3] Reading input image from: {input_path}")
-  print("[2/3] Removing background via rembg (downloading ~176 MB model if first run)...")
+  print("[2/3] Removing background via rembg...")
   lines, rows = process_image(str(input_path))
 
   print(f"[3/3] Generating animated SVG to: {output_svg}")
   generate_svg(lines, rows, str(font_path), str(output_svg))
-  print("Done! Check portrait.svg in your repository root.")
+  print("Done!")

@@ -50,7 +50,7 @@ def fetch_data():
     print(
         "Warning: GITHUB_TOKEN not set. Using local sample data for preview."
     )
-    # 52 dummy weeks for testing local visualization
+    # 52 dummy weeks for testing local visualization. This will get replaced later when gitlabs put the actual github token in.
     dummy_weeks = [0] * 40 + [2, 0, 1, 0, 4, 1, 0, 0, 3, 1, 0, 2]
     return {
         "total": 14,
@@ -121,15 +121,15 @@ def generate_sparkline_path(weekly_counts, width=700, y_base=160, y_top=100):
   n = len(weekly_counts)
   max_val = max(weekly_counts) if max(weekly_counts) > 0 else 1
 
-  # Compute coordinates for each week
+  # the graph must look rad
   points = []
   for i, count in enumerate(weekly_counts):
     x = (i / (n - 1)) * width
-    # Scale inverted since SVG y increases downwards
+    # Scale inverted since SVG y is inversed
     y = y_base - (count / max_val) * (y_base - y_top)
     points.append((round(x, 1), round(y, 1)))
 
-  # Smooth Bézier path interpolation
+  # bezier path interpolation AKA bullshit
   path_cmds = [f"M {points[0][0]} {points[0][1]}"]
   for i in range(len(points) - 1):
     p0 = points[i]
@@ -234,3 +234,5 @@ if __name__ == "__main__":
   render_stats_svg(data, str(stats_file))
   render_langs_svg(data["bytes"], data["repos"], str(langs_file))
   print("Updated stats.svg (with sparkline) and langs.svg")
+
+# This was needlessly complicated. I'll fix it later.

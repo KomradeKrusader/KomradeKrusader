@@ -7,7 +7,7 @@ FONT_SIZE = 13
 
 
 def make_header_svg(title, out_path):
-  # Approximate width of lowercase monospace characters
+  
   text_width = len(title) * 8.0
   line_start = text_width + 14
 
