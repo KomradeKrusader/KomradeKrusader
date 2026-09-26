@@ -12,7 +12,7 @@
   </picture>
 
   [Instagram](https://www.instagram.com/kommiekrusader/) &nbsp;·&nbsp;
-  [LinkedIn](https://www.linkedin.com/in/abhinav_prakash_singh) &nbsp;·&nbsp;
+  [LinkedIn](https://www.linkedin.com/in/abhinav_prakash_singh05) &nbsp;·&nbsp;
   [Email](singhabhinavprakash5@gmail.com)
 
 </div>
