@@ -34,7 +34,7 @@ jobs:
       - name: Commit If Changed
         run: |
           # 1. Define files to watch for changes
-          FILES="stats.svg streak.svg langs.svg year.svg"
+          FILES="stats.svg langs.svg"
           
           # 2. Check if git status is empty. If no changes, exit quietly without committing
           if [ -z "$(git status --porcelain -- $FILES)" ]; then
